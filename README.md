@@ -51,7 +51,7 @@ station) are:
 ## Installation
 
 ```
-composer require zoviet/WMO
+composer require zoviet/op
 
 ```
 
