@@ -1,4 +1,6 @@
-# FEDERAL CLIMATE COMPLEX GLOBAL SURFACE SUMMARY OF DAY DATA FILES (.op) PARSER
+# FEDERAL CLIMATE COMPLEX GLOBAL SURFACE SUMMARY OF DAY DATA FILES (.op) PARSER 
+
+***eSignal OptionsPlus (.op) weather file parser for NCDC data***
 
 Global surface summary of day product produced by the National Climatic Data Center (NCDC) in Asheville, NC.  
 
@@ -59,7 +61,7 @@ composer require zoviet/WMO
 	
 //Parsing with format output in USCS / USC
 
-$parser = new \WMO\parser();
+$parser = new \op\parser();
 if ($handle = opendir('data')) {
     while (false !== ($entry = readdir($handle))) {
         if (strpos($entry,'.op')!==false) {
@@ -86,7 +88,7 @@ $in =  $parser->data[277850][2007][2][8]->wind->speed->inaccuracy;
 
 //Parsing data (short format) in metric system (SI)
 
-$parser1 = new \WMO\parser(true);
+$parser1 = new \op\parser(true);
 
 $data = file_get_contents(__DIR__.'/data/277850-99999-2007.op');
 
@@ -94,7 +96,7 @@ var_dump($parser1->parse($data));
 
 //Parsing dataset in original format (without formatting - false)
 
-$parser2 = new \WMO\parser(false,false);
+$parser2 = new \op\parser(false,false);
 
 var_dump($parser2->parse($data)->data); //or same:  var_dump($parser2->parse($data));
 
@@ -108,7 +110,7 @@ Default metric system is USCS / USC
 For use SI: 
 
 ```
-$parser = new \WMO\parser(true);
+$parser = new \op\parser(true);
 
 ```
 when: Fahrenheit to Celsius, miles to km, knots to m/s 
@@ -120,9 +122,9 @@ when: Fahrenheit to Celsius, miles to km, knots to m/s
 
 1. custom object standart (format = true) - default:
 
-new \WMO\parser(); // or
+new \op\parser(); // or
 
-new \WMO\parser(false,true);
+new \op\parser(false,true);
 
 ```	
 
@@ -143,7 +145,7 @@ All sets cont. inaccuracy - statistic inaccuracy of the value +_
 
 2. object standart (format = false):
 
-new \WMO\parser(false,false);
+new \op\parser(false,false);
 
 ```
 ####Fields

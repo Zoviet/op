@@ -3,7 +3,7 @@
    * eSignal OptionsPlus (.op) weather file parser for NCDC data    
    *
    */
-namespace WMO;
+namespace op;
 
 class parser {	
 

@@ -3,7 +3,7 @@ require '../op/parser.php';
 
 //Parsing with format output in USCS / USC
 
-$parser = new \WMO\parser();
+$parser = new \op\parser();
 if ($handle = opendir('data')) {
     while (false !== ($entry = readdir($handle))) {
         if (strpos($entry,'.op')!==false) {
@@ -30,7 +30,7 @@ $in =  $parser->data[277850][2007][2][8]->wind->speed->inaccuracy;
 
 //Parsing data (short format) in metric system (SI)
 
-$parser1 = new \WMO\parser(true);
+$parser1 = new \op\parser(true);
 
 $data = file_get_contents(__DIR__.'/data/277850-99999-2007.op');
 
@@ -38,7 +38,7 @@ var_dump($parser1->parse($data));
 
 //Parsing dataset in original format (without formatting - false)
 
-$parser2 = new \WMO\parser(false,false);
+$parser2 = new \op\parser(false,false);
 
 var_dump($parser2->parse($data)->data);
 
