@@ -117,10 +117,10 @@ when: Fahrenheit to Celsius, miles to km, knots to m/s
 
 ## Output formats
 
+### 1. custom object standart (format = true) - default:
+
 ```
 [station ID][year][month][day]->object
-
-1. custom object standart (format = true) - default:
 
 new \op\parser(); // or
 
@@ -128,7 +128,7 @@ new \op\parser(false,true);
 
 ```	
 
-####Fields
+#### Fields
 
 - ***->temp*** Temperature dataset 
 
@@ -140,15 +140,15 @@ new \op\parser(false,true);
 
 All sets cont. inaccuracy - statistic inaccuracy of the value +_ 
 
+### 2. object standart (format = false):
+
 ```
 [station ID][year][month][day]->object
-
-2. object standart (format = false):
 
 new \op\parser(false,false);
 
 ```
-####Fields
+#### Fields
 
 - ***TEMP (float)*** Mean temperature for the day in degrees Fahrenheit to tenths;
 
