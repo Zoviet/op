@@ -1,0 +1,16 @@
+{
+    "name": "zoviet/WMO",
+    "description": "eSignal OptionsPlus (.op) weather file parser for NCDC data",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Zoviet",
+            "email": "alexandr@asustem.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+		
+	}
+}
